@@ -33,6 +33,7 @@ const createWorker = async(data) => {
         id: uuid.v4(),
         firstName : data.firstName,
         lastName: data.lastName,
+        dni:data.dni,
         email: data.email,
         phone: data.phone,
         birthday: data.birthday,

@@ -22,9 +22,9 @@ const getWorkerById = (req, res) => {
 }
 
 const createWorker = (req, res) => {
-    const {firstName, lastName, email, phone, birthday, age, typeContractId, areaId, status} = req.body
-    if(firstName && lastName && email && phone && birthday && age && typeContractId && areaId){
-        workersControllers.createWorker({firstName, lastName, email, phone, birthday, age, typeContractId, areaId})
+    const {firstName, lastName, email,dni, phone, birthday, age, typeContractId, areaId} = req.body
+    if(firstName && lastName && email && dni && phone && birthday && age && typeContractId && areaId){
+        workersControllers.createWorker({firstName, lastName, dni, email, phone, birthday, age, typeContractId, areaId})
         .then(data => {
             res.status(201).json(data)
         })
@@ -35,6 +35,7 @@ const createWorker = (req, res) => {
         res.status(400).json({message: 'All Fields must be completed', fields: {
             firsName: 'string',
             lastName: 'string',
+            dni: 'number',
             email: 'example@example.com',
             phone: 999999999,
             birthday: 'YYYY/MM/DD',

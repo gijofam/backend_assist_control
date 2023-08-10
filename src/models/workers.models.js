@@ -19,6 +19,10 @@ const Workers = db.define('workers',{
         allowNull: false,
         field: 'last_name'
     },
+    dni:{
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
     email: {
         type: DataTypes.STRING,
         allowNull: false,

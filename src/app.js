@@ -8,6 +8,7 @@ const authRouter = require('./auth/auth.router')
 const workerRouter = require('./workers/workers.router')
 const typeContractRouter = require('./typeContracts/typeContract.router')
 const areaRouter = require('./areas/areas.router')
+const assistControlRouter = require('./assistControl/assistControl.router')
 
 const cors = require('cors')
 // Initial configs
@@ -48,6 +49,7 @@ app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/workers', workerRouter)
 app.use('/api/v1/contracts', typeContractRouter)
 app.use('/api/v1/areas', areaRouter)
+app.use('/api/v1/assistcontrol', assistControlRouter)
 
 app.listen(port, () => {
     console.log(`Server started at port ${port}`)
