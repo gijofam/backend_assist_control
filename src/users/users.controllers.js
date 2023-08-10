@@ -11,7 +11,7 @@ const { hashPassword } = require('../utils/crypto')
 const getAllUsers = async () => {
   const data = await Users.findAll({
     where:{
-      status: 'active'
+      status: 'activo'
     }
   })
   return data

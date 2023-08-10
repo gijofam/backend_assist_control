@@ -4,7 +4,7 @@ const workersServices = require('./workers.services')
 
 router.get('/', workersServices.getAllWorkers)
 
-router.route('/:id')
+router.route('/:idWorker')
     .get(workersServices.getWorkerById)
     .patch(workersServices.updateWorker)
 

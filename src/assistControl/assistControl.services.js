@@ -11,7 +11,7 @@ const getAllAssistControl =  (req, res) => {
 }
 
 const getByIdAssistControl =  (req, res) => {
-    const id = req.params
+    const id = req.params.id
     assistControlController.getByIdAssistControl(id)
        .then(data => {
            res.status(200).json(data)
@@ -23,8 +23,8 @@ const getByIdAssistControl =  (req, res) => {
 
 const registrarAssistControl = async (req, res) => {
     const {workerId, userId, turno, date } = req.body 
-    if(workerId && userId && turno && date){
-    assistControlController.registerAssistControl({workerId, userId, turno, date })
+    if(workerId && userId && turno){
+    assistControlController.registerAssistControl({workerId, userId, turno})
         .then(data => {
             res.status(201).json(data)
         })

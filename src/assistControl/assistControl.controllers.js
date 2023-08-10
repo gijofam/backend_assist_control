@@ -21,7 +21,6 @@ const registerAssistControl = async (data) => {
         workerId : data.workerId,
         userId: data.userId,
         turno: data.turno,
-        date: data.date
     }) 
 
     return result

@@ -19,10 +19,10 @@ const getAllWorkersInactive = async() => {
     return data
 }
 
-const getWorkerById = async(id) => {
+const getWorkerById = async(dni) => {
     const data = await Workers.findOne({
         where: {
-            id
+            dni
         }
     })
     return data
