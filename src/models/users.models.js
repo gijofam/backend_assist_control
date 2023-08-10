@@ -49,7 +49,8 @@ const Users = db.define('users', {
     },
     country:{
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        defaultValue: 'peru'
     },
     status:{
         type: DataTypes.STRING,
