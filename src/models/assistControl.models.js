@@ -34,7 +34,12 @@ const AssistControl = db.define('assist_control', {
     date: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: Sequelize.NOW
+        defaultValue: Sequelize.NOW,
+        get() {
+            // Esta función se llama cuando obtienes el valor del campo
+            const rawValue = this.getDataValue('date');
+            return rawValue ? rawValue.toLocaleString() : null;
+        },
     }
 })
 

@@ -3,6 +3,7 @@ const Areas = require('./areas.models')
 const AssistControl = require('./assistControl.models')
 const TypeContracts = require('./typeContracts.models')
 const Workers = require('./workers.models')
+const Cargos = require('./cargos.models')
 
 const initModels = () => {
     Areas.hasMany(Workers)
@@ -16,6 +17,11 @@ const initModels = () => {
 
     TypeContracts.hasMany(Workers)
     Workers.belongsTo(TypeContracts)
+    
+    Cargos.hasMany(Workers)
+    Workers.belongsTo(Cargos)
+
+
 }
 
 module.exports = initModels

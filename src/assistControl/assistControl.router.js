@@ -6,6 +6,6 @@ router.get('/', assistControlService.getAllAssistControl)
 
 router.get('/:id', assistControlService.getByIdAssistControl)
 
-router.get('/register', assistControlService.registrarAssistControl)
+router.post('/register', assistControlService.registrarAssistControl)
 
 module.exports = router

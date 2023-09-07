@@ -22,7 +22,7 @@ const getByIdAssistControl =  (req, res) => {
    }
 
 const registrarAssistControl = async (req, res) => {
-    const {workerId, userId, turno, date } = req.body 
+    const {workerId, userId, turno} = req.body 
     if(workerId && userId && turno){
     assistControlController.registerAssistControl({workerId, userId, turno})
         .then(data => {
@@ -32,7 +32,7 @@ const registrarAssistControl = async (req, res) => {
             res.status(400).json({message: err.message})
         })
     }else{
-        res.status(404).json({message: `All fields must be completed`, fields: {
+        res.status(400).json({message: `All fields must be completed`, fields: {
             workerId : 'UUID',
             userId: 'UUID',
             turno: 'STRING',
